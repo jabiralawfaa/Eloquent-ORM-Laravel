@@ -10,4 +10,8 @@ class MataKuliah extends Model
     protected $primaryKey = 'kode_matkul';
     public $incrementing = false;
     protected $keyType = 'string';
+
+    public function mahasiswa() {
+        return $this->belongsToMany(Mahasiswa::class, 'krs', 'kode_matkul', 'nim');
+    }
 }

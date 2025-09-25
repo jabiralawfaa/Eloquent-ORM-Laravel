@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ktm extends Model
 {
-    protected $table = 'kelas';
-    protected $primaryKey = 'id_kelas';
+    protected $table = 'ktm';
+
+    public function mahasiswa() {
+        return $this->belongsTo(Mahasiswa::class, 'nim', 'nim');
+    }
 }
