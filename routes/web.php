@@ -6,4 +6,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('students', App\Http\Controllers\StudentController::class);
+Route::get('students', [App\Http\Controllers\StudentController::class, 'index'])->name('students.index');
