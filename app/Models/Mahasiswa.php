@@ -11,6 +11,8 @@ class Mahasiswa extends Model
     public $incrementing = false;
     protected $keyType = 'string';
 
+    protected $fillable = ['nim', 'nama', 'id_kelas'];
+
     // One to One → Mahasiswa punya satu KTM
     public function ktm() {
         return $this->hasOne(Ktm::class, 'nim', 'nim');
