@@ -34,7 +34,7 @@
                     <td>{{ $mahasiswa->kelas->nama_kelas ?? 'N/A' }}</td>
                     <td>
                         <a href="{{ route('mahasiswa.edit', $mahasiswa->nim) }}" class="btn btn-sm btn-warning">Edit</a>
-                        <form action="{{ route('mahasiswa.destroy', $mahasiswa->nim) }}" method="POST" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                        <form action="{{ route('mahasiswa.destroy', $mahasiswa->nim) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-danger">Delete</button>
